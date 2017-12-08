@@ -1,0 +1,12 @@
+db
+trash.json
+Analysis/src/.ipython
+Analysis/src/.cache
+Analysis/src/.jupyter
+Analysis/src/.local
+Analysis/src/.ipynb_checkpoints
+Streamer/src/.ipython
+Streamer/src/.cache
+Streamer/src/.jupyter
+Streamer/src/.local
+Streamer/src/.ipynb_checkpoints
