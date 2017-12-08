@@ -1,0 +1,41 @@
+version : '2'
+
+services:
+  db:
+    restart: always
+    container_name: mongodb_01
+    image: mongo:3.6.0
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - db-data
+
+
+  db-data:
+    restart: always
+    image: alpine:3.6
+    volumes:
+      - ./db:/data/db
+    command: "true"
+
+
+  streamer:
+    build:
+      context: ./Streamer
+    container_name: streamer_01
+    volumes:
+      - ./Streamer/src:/home/ds
+    ports:
+      - "9999:9999"
+    depends_on:
+      - db
+
+  analysis:
+    image: madderle/datascience
+    container_name: analysis_01
+    volumes:
+      - ./Analysis/src:/home/ds
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
