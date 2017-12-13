@@ -31,7 +31,7 @@ services:
       - db
 
   analysis:
-    image: madderle/datascience
+    image: madderle/data-python-stack
     container_name: analysis_01
     volumes:
       - ./Analysis/src:/home/ds
