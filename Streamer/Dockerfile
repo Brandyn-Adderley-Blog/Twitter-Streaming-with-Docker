@@ -1,4 +1,4 @@
-FROM madderle/basestack:latest
+FROM madderle/basic-stack:latest
 
 RUN pip install tweepy pymongo
 
